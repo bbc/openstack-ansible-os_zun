@@ -119,6 +119,10 @@ driver_list = cinder,local
 volume_dir = /var/lib/{{ zun_system_user_name }}/volumes
 
 
+[compute]
+host_shared_with_nova = {{ inventory_hostname in groups['nova_compute'] }}
+
+
 [websocket_proxy]
 base_url = {{ zun_wsproxy_base_uri }}
 wsproxy_host = {{ zun_wsproxy_host }}
