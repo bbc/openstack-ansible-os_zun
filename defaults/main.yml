@@ -101,6 +101,9 @@ zun_docker_users:
 # version will be used as determined by the client version information.
 zun_docker_api_version: false
 
+# Set the address for Docker to bind to. Used by the wsproxy console forwarder
+zun_docker_bind_host: "{{ openstack_service_bind_address | default('0.0.0.0') }}"
+
 # Time period for which to clean up old Docker data. The options are hour, day,
 # month, or year. (string value)
 zun_docker_prune_frequency: hour
