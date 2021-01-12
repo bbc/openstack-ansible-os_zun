@@ -1,7 +1,7 @@
 #!/bin/bash
 {% if zun_docker_prune_images %}
-docker image prune -a -f --filter "until=1h"
-{% endif %}
-{% if zun_docker_prune_networks %}
-docker network prune -f --filter "until=1h"
+# Clear dangling images from Docker
+docker image prune -f
+# Clear old images from Zun cache directory
+find /var/cache/zun -amin +1440 -type f -exec rm -fv {} \;
 {% endif %}

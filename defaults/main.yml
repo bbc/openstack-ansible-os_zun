@@ -110,7 +110,6 @@ zun_docker_prune_frequency: hour
 
 # Which Docker data to clean up when running the above periodic task
 zun_docker_prune_images: True
-zun_docker_prune_networks: True
 
 ## Manually specified zun UID/GID
 # Deployers can specify a UID for the zun user as well as the GID for the
